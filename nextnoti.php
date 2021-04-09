@@ -10,7 +10,9 @@ if (!$c_mailto) {
 
 $db = new PDO('sqlite:'.$c_sqlitefile);
 
-$out = $db->query('SELECT calendardata FROM oc_calendarobjects');
+$calid = isset($c_calendarid)?(int)$c_calendarid:1;
+
+$out = $db->query("SELECT calendardata FROM oc_calendarobjects WHERE calendarid=$calid");
 
 $mc = '';
 $ms = '';
