@@ -26,5 +26,5 @@ foreach ($out as $row) {
 }
 
 if ($ms != '') {
-    mail($c_mailto, $ms, $mc);
+    mail($c_mailto, $ms, $mc, "From: ".$c_mailfrom);
 }

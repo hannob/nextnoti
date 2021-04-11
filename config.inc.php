@@ -1,7 +1,8 @@
 <?php
 
 // Set mail address
-$c_mailto = '';
+$c_mailto = 'to@example.org';
+$c_mailfrom = 'from@example.org';
 
 // Calendar id in database (optional, default: 1)
 // $c_calendarid = 1;
