@@ -25,6 +25,7 @@ foreach ($out as $row) {
     }
 }
 
+$ms = mb_encode_mimeheader($ms, 'UTF-8', 'Q');
 if ($ms != '') {
     mail($c_mailto, $ms, $mc, "From: ".$c_mailfrom);
 }
