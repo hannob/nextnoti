@@ -1,8 +1,0 @@
-language: php
-php:
-  - '7.4'
-  - '8.0'
-install:
-  - wget https://cs.symfony.com/download/php-cs-fixer-v2.phar
-script:
-  - php php-cs-fixer-v2.phar fix --dry-run --diff .
