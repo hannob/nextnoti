@@ -19,7 +19,7 @@ $ms = '';
 foreach ($out as $row) {
     $s = $row['calendardata'];
     if (preg_match('/DTSTART.*'.date('Ymd').'/', $s)) {
-        preg_match('/SUMMARY:(.*)/', $s, $m);
+        preg_match('/SUMMARY[^:]*:(.*)/', $s, $m);
         $ms .= $m[1].',';
         $mc .= $s;
     }
