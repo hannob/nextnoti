@@ -8,4 +8,4 @@ $c_mailfrom = 'from@example.org';
 // $c_calendarid = 1;
 
 // Path to sqlite db
-$c_sqlitefile = dirname(__FILE__).'/../data/owncloud.db';
+$c_sqlitefile = dirname(__FILE__) . '/../data/owncloud.db';
