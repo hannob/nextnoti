@@ -4,4 +4,4 @@ set -euo pipefail
 [ -e php-cs-fixer ] || curl -L https://cs.symfony.com/download/php-cs-fixer-v3.phar >php-cs-fixer
 chmod +x php-cs-fixer
 
-./php-cs-fixer fix --rules @PSR12,@PHP81Migration --allow-risky=yes --dry-run --diff .
+./php-cs-fixer fix --rules @PER,@PHP83Migration --allow-risky=yes --dry-run --diff .
