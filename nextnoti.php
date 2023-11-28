@@ -1,6 +1,11 @@
 #!/usr/bin/php
 <?php
 
+$DEBUG = false;
+if ((count($argv) > 1) && ($argv[1] == "-d")) {
+    $DEBUG = true;
+}
+
 require_once(dirname(__FILE__) . "/config.inc.php");
 
 if (!$c_mailto) {
@@ -20,10 +25,16 @@ foreach ($out as $row) {
     $s = $row['calendardata'];
     if (preg_match('/DTSTART.*' . date('Ymd') . '/', $s)) {
         preg_match('/SUMMARY[^:]*:(.*)/', $s, $m);
+        $summary = "";
         if (count($m) < 2) {
             echo "WARNING: Calendar entry has no SUMMARY";
+        } else {
+            $summary = trim($m[1]);
         }
-        array_push($ms, $m[1]);
+        if ($DEBUG) {
+            echo "Found Calendar Entry " . $summary . " today\n";
+        }
+        array_push($ms, $summary);
         $mc .= $s;
     }
 }
